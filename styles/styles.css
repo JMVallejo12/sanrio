@@ -9,6 +9,7 @@
   background-color: white;
   position: fixed;
   width: 100%;
+  padding-top: 0.9rem;
 }
 .header .nav-bar {
   display: flex;
@@ -22,10 +23,12 @@
   list-style: none;
 }
 .header .nav-bar .nav-right .li-item-r {
-  margin-right: 1rem;
+  margin-right: 0.3rem;
   text-decoration: none;
   color: black;
   font-family: "Poppins", sans-serif;
+  border: 1px solid black;
+  padding: 0.4rem;
 }
 .header .nav-bar .nav-left {
   display: flex;
@@ -47,7 +50,7 @@
 }
 
 .welcome {
-  padding-top: 8rem;
+  padding-top: 5rem;
   display: flex;
   border: 1px solid black;
   justify-content: center;
@@ -56,6 +59,45 @@
   height: 450px;
   width: 745px;
   background-color: rgb(249, 218, 246);
+}
+.welcome .article-welcome .title-welcome {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcome .article-welcome .title-welcome .h1-welcome {
+  font-family: "Poppins", sans-serif;
+  color: rgb(165, 81, 208);
+  padding-bottom: 1rem;
+  font-size: 36px;
+}
+.welcome .article-welcome .title-welcome .p-welcome {
+  font-family: "Poppins", sans-serif;
+  color: rgb(165, 81, 208);
+  padding-top: 1rem;
+  border-top: 2px solid rgb(165, 81, 208);
+  font-size: 16px;
+}
+.welcome .article-welcome .btn-container {
+  display: flex;
+  justify-content: center;
+}
+.welcome .article-welcome .btn-container .btn-welcome {
+  text-decoration: none;
+  color: rgb(165, 81, 208);
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  padding: 0.5rem;
+  height: 45px;
+  width: 150px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 0.2px solid black;
 }
 .welcome .img-welcome .hello-kitty-size {
   width: 394px;
