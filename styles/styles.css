@@ -28,7 +28,13 @@
   color: black;
   font-family: "Poppins", sans-serif;
   border: 1px solid black;
-  padding: 0.4rem;
+  padding: 0.5rem;
+  font-size: 12px;
+  transition: 0.3s;
+}
+.header .nav-bar .nav-right .li-item-r:hover {
+  background-color: rgb(165, 81, 208);
+  color: white;
 }
 .header .nav-bar .nav-left {
   display: flex;
@@ -36,6 +42,10 @@
   list-style: none;
 }
 .header .nav-bar .nav-left .li-item-home .sanrio-logo {
+  width: 125px;
+  transition: 0.3s;
+}
+.header .nav-bar .nav-left .li-item-home .sanrio-logo:hover {
   width: 135px;
 }
 .header .nav-bar .nav-left .li-item-search {
@@ -44,6 +54,7 @@
   height: 30px;
   width: 300px;
   padding-left: 0.4rem;
+  font-size: 14px;
 }
 
 .welcome {
@@ -112,7 +123,7 @@
   display: flex;
 }
 .general .general-article .img-general-container .img-general {
-  height: 450px;
+  height: 460px;
 }
 .general .general-article .text-general-container {
   border-top: 1px solid black;
@@ -123,7 +134,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 450px;
+  height: 460px;
   width: 450px;
   background-color: rgb(165, 81, 208);
 }
