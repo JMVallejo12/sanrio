@@ -10,6 +10,7 @@
   position: fixed;
   width: 100%;
   padding-top: 0.9rem;
+  z-index: 9999;
 }
 .header .nav-bar {
   display: flex;
@@ -242,6 +243,64 @@
   text-align: center;
   font-size: 18px;
   margin-top: 0.4rem;
+}
+
+.extras {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+.extras .extras-banner .img-extra-banner {
+  width: 1125px;
+  margin-bottom: 1.5rem;
+}
+.extras .flyers {
+  display: flex;
+  justify-content: center;
+}
+.extras .flyers .flyer-1-container .img-flyer {
+  height: 500px;
+  margin-right: 1rem;
+}
+.extras .flyers .flyer-1-container .h4-flyer {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 0.4rem;
+}
+.extras .flyers .flyer-2-container .img-flyer {
+  height: 500px;
+}
+.extras .flyers .flyer-2-container .h4-flyer {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 0.4rem;
+}
+.extras .flyers .flyer-3-container .img-flyer {
+  height: 500px;
+  margin-left: 1rem;
+}
+.extras .flyers .flyer-3-container .h4-flyer {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 0.4rem;
+  padding-left: 1.3rem;
+}
+.extras .extra-shops {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+.extras .extra-shops .img-extra-shop {
+  width: 1123px;
+  margin-bottom: 1.3rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
