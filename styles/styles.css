@@ -186,6 +186,7 @@
 .chars .article-chars .chars-container {
   display: flex;
   flex-wrap: wrap;
+  height: 150px;
 }
 .chars .article-chars .chars-container .img-char {
   width: 120px;
@@ -195,6 +196,31 @@
 }
 .chars .article-chars .chars-container .img-char:hover {
   width: 125px;
+}
+
+.shops {
+  display: flex;
+  justify-content: center;
+}
+.shops .article-shops {
+  display: flex;
+}
+.shops .article-shops .img-shop-container-1 .img-shop {
+  height: 500px;
+  position: relative;
+  z-index: 0;
+  margin-right: 1rem;
+}
+.shops .article-shops .img-shop-container-2 .img-shop {
+  height: 500px;
+  position: relative;
+  z-index: 0;
+}
+.shops .article-shops .img-shop-container-3 .img-shop {
+  height: 500px;
+  position: relative;
+  z-index: 0;
+  margin-left: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
