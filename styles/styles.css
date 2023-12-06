@@ -77,6 +77,105 @@
   font-size: 14px;
 }
 
+.main-title {
+  padding-top: 5rem;
+}
+.main-title .article-main .mi-perfil-title {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: rgb(165, 81, 208);
+}
+
+.grid-container {
+  padding-top: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "profile-side-l profile-side-r" "profile-side-l-2 profile-side-r-2" "profile-side-l-2 profile-side-r-2";
+}
+
+.profile-side-l {
+  grid-area: profile-side-l;
+  border: 1px solid black;
+  width: 25rem;
+}
+.profile-side-l .img-profile-container {
+  height: 24rem;
+  width: 18rem;
+  border: 4px solid rgb(249, 218, 246);
+}
+
+.profile-side-r {
+  grid-area: profile-side-r;
+  border: 1px solid black;
+  width: 60rem;
+}
+.profile-side-r .fav-title {
+  background-color: rgb(249, 218, 246);
+  text-align: center;
+  color: rgb(165, 81, 208);
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  padding: 0.5rem;
+}
+
+.items {
+  padding-top: 9rem;
+}
+.items .items-container {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.items .items-container .card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 1rem;
+  height: 320px;
+  width: 250px;
+  background-color: rgb(249, 218, 246);
+}
+.items .items-container .card-item .img-product-container {
+  display: flex;
+  justify-content: center;
+}
+.items .items-container .card-item .img-product-container .img-product {
+  height: 190px;
+}
+.items .items-container .card-item .name-product-container .p-product {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  margin-top: 1rem;
+  text-align: center;
+}
+.items .items-container .card-item .price-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.9rem;
+}
+.items .items-container .card-item .price-options .price-container {
+  padding-right: 0.7rem;
+  border-right: 1px solid black;
+}
+.items .items-container .card-item .price-options .options-container .btn-options {
+  background-color: transparent;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  font-size: 14px;
+}
+.items .items-container .card-item .price-options .options-container .drop-style {
+  border-radius: 0px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
 .welcome {
   padding-top: 5rem;
   display: flex;
