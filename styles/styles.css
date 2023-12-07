@@ -122,6 +122,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 3.5rem;
 }
 .profile-side-r .img-container .ctn-1 {
   display: flex;
@@ -148,6 +149,18 @@
 }
 .profile-side-r .img-container .ctn-1 #btn-cinnamoroll {
   color: rgb(110, 197, 232);
+}
+.profile-side-r .img-container .ctn-1 #btn-keroppi {
+  color: rgb(0, 158, 0);
+}
+.profile-side-r .img-container .ctn-1 #btn-pompompurin {
+  color: rgb(226, 226, 0);
+}
+.profile-side-r .img-container .ctn-1 #btn-pochacco {
+  color: rgb(77, 159, 191);
+}
+.profile-side-r .img-container .ctn-1 #btn-little {
+  color: rgb(3, 168, 234);
 }
 
 .items {
