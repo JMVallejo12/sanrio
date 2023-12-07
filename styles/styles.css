@@ -143,6 +143,12 @@
 .profile-side-r .img-container .ctn-1 #btn-hello {
   color: rgb(195, 1, 1);
 }
+.profile-side-r .img-container .ctn-1 #btn-melody {
+  color: rgb(201, 126, 139);
+}
+.profile-side-r .img-container .ctn-1 #btn-cinnamoroll {
+  color: rgb(110, 197, 232);
+}
 
 .items {
   padding-top: 9rem;
