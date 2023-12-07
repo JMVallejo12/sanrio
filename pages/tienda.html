@@ -14,19 +14,19 @@
         
     <!-- barra navegacion -->
 
-    <header class="header">
+    <header class="header" id="header">
         
         <nav class="nav-bar">
 
             <ul class="nav-left">
-                <li><a href="" class="li-item-home"><img src="../assets/sanrio-logo.avif" alt="Logo de sanrio" class="sanrio-logo"></a></li>
+                <li><a href="../index.html" class="li-item-home"><img src="../assets/sanrio-logo.avif" alt="Logo de sanrio" class="sanrio-logo"></a></li>
                 <li><input type="search" id="busqueda" name="q" placeholder="Que es lo que buscas?" class="li-item-search"></li>
             </ul>
 
             <ul class="nav-right">
                 <li ><a href="" class="li-item-r">EJEMPLO</a></li>
                 <li ><a href="" class="li-item-r">EJEMPLO</a></li>
-                <li ><a href="" class="li-item-r">EJEMPLO</a></li>
+                <li ><a href="./tienda.html" class="li-item-r">TIENDA</a></li>
                 <li><a href="./miperfil.html" class="li-item-r">MI PERFIL</a></li>
             </ul>
 
@@ -49,7 +49,7 @@
 
         <!-- primer item -->
             
-            <div class="card-item">
+            <div class="card-item" id="shirt-1">
                 <!-- foto -->
                 <div class="img-product-container">
                     <img src="../assets/shirt-1.webp" alt="Imagen de una camiseta de littletwinstars" class="img-product">
@@ -58,7 +58,7 @@
 
                 <!-- nombre -->
                 <div class="name-product-container">
-                    <p class="p-product">LittleTwinStars Classic Logo T-Shirt</p>
+                    <p class="p-product" id="shirt-value">LittleTwinStars Classic Logo T-Shirt</p>
                 </div>
 
                 <!-- precio y opciones -->
@@ -76,7 +76,7 @@
                             </button>
                             <ul class="dropdown-menu drop-style">
                               <li><a class="dropdown-item" href="#">COMPRAR</a></li>
-                              <li><a class="dropdown-item" href="#">FAVORITOS</a></li>
+                              <li><a class="dropdown-item" href="#" id="fav-shirt-1">FAVORITOS</a></li>
                             </ul>
                           </div>
                     </div>
@@ -135,7 +135,7 @@
 
                 <!-- nombre -->
                 <div class="name-product-container">
-                    <p class="p-product">LittleTwinStars Sanrio Original Graphic Tee</p>
+                    <p class="p-product">Hello Kitty Cowboy Hat Tee</p>
                 </div>
 
                 <!-- precio y opciones -->
@@ -162,6 +162,9 @@
 
 
             </div>
+
+
+        <!-- item 4 -->
         
 
         </article>
@@ -170,6 +173,6 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+<script src="../main.js"></script>
 </body>
 </html>
