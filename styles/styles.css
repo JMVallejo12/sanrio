@@ -162,6 +162,66 @@
 .profile-side-r .img-container .ctn-1 #btn-little {
   color: rgb(3, 168, 234);
 }
+.profile-side-r .item-favs .item-title {
+  background-color: rgb(249, 218, 246);
+  text-align: center;
+  color: rgb(165, 81, 208);
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  padding: 0.5rem;
+}
+.profile-side-r .item-favs .favs-container {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.profile-side-r .item-favs .favs-container .card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 1rem;
+  height: 320px;
+  width: 250px;
+  background-color: rgb(249, 218, 246);
+}
+.profile-side-r .item-favs .favs-container .card-item .img-product-container {
+  display: flex;
+  justify-content: center;
+}
+.profile-side-r .item-favs .favs-container .card-item .img-product-container .img-product {
+  height: 190px;
+}
+.profile-side-r .item-favs .favs-container .card-item .name-product-container .p-product {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  margin-top: 1rem;
+  text-align: center;
+}
+.profile-side-r .item-favs .favs-container .card-item .price-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.9rem;
+}
+.profile-side-r .item-favs .favs-container .card-item .price-options .price-container {
+  padding-right: 0.7rem;
+  border-right: 1px solid black;
+}
+.profile-side-r .item-favs .favs-container .card-item .price-options .options-container .btn-options {
+  background-color: transparent;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  font-size: 14px;
+}
+.profile-side-r .item-favs .favs-container .card-item .price-options .options-container .drop-style {
+  border-radius: 0px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
 
 .items {
   padding-top: 9rem;
