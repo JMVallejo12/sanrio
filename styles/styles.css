@@ -223,15 +223,48 @@
   font-size: 14px;
 }
 
-.items {
-  padding-top: 9rem;
+.sections-container {
+  display: flex;
+  justify-content: space-between;
 }
-.items .items-container {
-  padding: 2rem;
+.sections-container .filters {
+  padding-top: 10rem;
+  border: 1px solid black;
+}
+.sections-container .filters .h2-filters {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 0.8rem;
+}
+.sections-container .filters .h3-filters {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  padding-top: 0.8rem;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.2rem;
+}
+.sections-container .filters .filter-1 {
+  background-color: rgb(249, 218, 246);
+  height: 20rem;
+  width: 15rem;
+  padding: 1rem;
+}
+.sections-container .filters .filter-1 .checkbox {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  margin: 0.4rem;
+}
+.sections-container .items {
+  padding-top: 9rem;
+  border: 1px solid black;
+}
+.sections-container .items .items-container {
+  padding: 0rem;
   display: flex;
   flex-wrap: wrap;
 }
-.items .items-container .card-item {
+.sections-container .items .items-container .card-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -242,37 +275,37 @@
   width: 250px;
   background-color: rgb(249, 218, 246);
 }
-.items .items-container .card-item .img-product-container {
+.sections-container .items .items-container .card-item .img-product-container {
   display: flex;
   justify-content: center;
 }
-.items .items-container .card-item .img-product-container .img-product {
+.sections-container .items .items-container .card-item .img-product-container .img-product {
   height: 190px;
 }
-.items .items-container .card-item .name-product-container .p-product {
+.sections-container .items .items-container .card-item .name-product-container .p-product {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   margin-top: 1rem;
   text-align: center;
 }
-.items .items-container .card-item .price-options {
+.sections-container .items .items-container .card-item .price-options {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-left: 0.9rem;
 }
-.items .items-container .card-item .price-options .price-container {
+.sections-container .items .items-container .card-item .price-options .price-container {
   padding-right: 0.7rem;
   border-right: 1px solid black;
 }
-.items .items-container .card-item .price-options .options-container .btn-options {
+.sections-container .items .items-container .card-item .price-options .options-container .btn-options {
   background-color: transparent;
   color: black;
   font-family: "Poppins", sans-serif;
   border: none;
   font-size: 14px;
 }
-.items .items-container .card-item .price-options .options-container .drop-style {
+.sections-container .items .items-container .card-item .price-options .options-container .drop-style {
   border-radius: 0px;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
