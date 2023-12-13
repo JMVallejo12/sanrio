@@ -1,0 +1,7 @@
+[
+    {"name": "LittleTwinStars Classic Logo T-Shirt", "type": "shirt", "price": "19$", "img": "../assets/shirt-1.webp"},
+    {"name": "LittleTwinStars Sanrio Original Graphic Tee", "type": "shirt", "price": "22$", "img": "../assets/shirt-2.jpg"},
+    {"name": "Hello Kitty Cowboy Hat Tee", "type": "shirt", "price": "15$", "img": "../assets/shirt-3.webp"},
+    {"name": "Hello Kitty Wild West Tee", "type": "shirt", "price": "19.99$", "img": "../assets/shirt-4.webp"},
+    {"name": "Hello Kitty x Dumbgood Butterfly Glitter Sweatpants", "type": "pants", "price": "90$", "img": "../assets/pants-1.webp"}
+]

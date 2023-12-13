@@ -1,6 +1,3 @@
-
-
-
 // agregando el header
 
 const header = document.getElementById("header")
@@ -75,9 +72,6 @@ btnlittle.addEventListener("click", ()=>{
     change_color(little)
 })
 
-
-
-
 // funcion que recibe color como parametro
 
 function change_color(color){
@@ -110,39 +104,31 @@ function change_color(color){
           }).showToast();
 
     }
-    
-   
 
 }
 
+function update_favs(){
 
-// leyendo los favs de mi localstorage
-
+// constantes de mi id del dom y la lista del localstorage
+// fundamental que esten dentro para que se actualice cada vez que elimino algo de favoritos
+const favcontainer = document.getElementById("favs-container")
 const favs_list = JSON.parse(localStorage.getItem('favs'))
 
-// console.log(favs_list)
-
-// leyendo la lista de productos
-
-const product_list = JSON.parse(localStorage.getItem('productos'))
-
-// console.log(product_list)
-
-// id de mi container
-
-const favcontainer = document.getElementById("favs-container")
+    favcontainer.innerHTML = ``
 
 // encontrando el producto en la lista
+const products_url = "/products.json"
 
-
-
+fetch(products_url)
+.then(response => response.json())
+.then(data => {
 
     favs_list.forEach(fav => {
 
-        const producto_card = product_list.find(producto => producto.name === fav)
-    
+        const producto_card = data.find(producto => producto.name === fav)
+        
         console.log(producto_card)
-    
+
         if (producto_card){
     
             favcontainer.innerHTML += `
@@ -174,59 +160,67 @@ const favcontainer = document.getElementById("favs-container")
                             </button>
                             <ul class="dropdown-menu drop-style">
                             <li><a class="dropdown-item" href="#" id="${producto_card.name}">ELIMINAR</a></li>
+                            <li><a class="dropdown-item" href="#" id="buy-${producto_card.name}">COMPRAR</a></li>
+
                             </ul>
+                            
                         </div>
                     </div>
                 </div>
         
-        `
-    
-    
-        }else{
-            console.log("hola")
-        }
-    
+        ` 
+ // eliminando un favorito
+
+ const dropdowndelete = document.querySelectorAll('.dropdown-item')
+
+ dropdowndelete.forEach((deletebuy) =>{
+ 
+     deletebuy.addEventListener("click", function(event){
+ 
+         event.preventDefault()
+         const id = this.id
+         const newId = id.replace("buy-","")
+
+         const btndelete = id.startsWith('buy')
+         const delete_select = btndelete ? buyitem : deleteitem
+         delete_select()
+
+         function deleteitem(){
+
+            // borrando el elemento de el localstorage
+            const favs_obj = JSON.parse(localStorage.getItem('favs'))
+            console.log(favs_obj)
+            const index = favs_obj.indexOf(id)
+            favs_obj.splice(index, 1)
+            localStorage.setItem('favs',JSON.stringify(favs_obj))
+            update_favs()
+ 
+ 
+         // poner un toastify para que notifique al usuario de que se borro y que recargue la pagina
         
-    
-    })
 
+         }
 
-    // eliminando un favorito
+         function buyitem(){
 
-const dropdowndelete = document.querySelectorAll('.dropdown-item')
+            console.log("comprar")
 
-dropdowndelete.forEach((deleteItem) =>{
+         }
+     })
+ })
+        }else{
 
-    deleteItem.addEventListener("click", function(event){
-
-        event.preventDefault()
-
-        const id = this.id
-
-
-        // borrando el elemento de el localstorage
-        const favs_obj = JSON.parse(localStorage.getItem('favs'))
-
-        const index = favs_obj.indexOf(id)
-
-        favs_obj.splice(index, 1)
-
-        localStorage.setItem('favs',JSON.stringify(favs_obj))
-
-
-        // poner un toastify para que notifique al usuario de que se borro y que recargue la pagina
-
-
-
-
-
+            favcontainer.innerHTML = ``
+        }
     })
 })
+}
 
-
-
+update_favs()
 
 
 
     
+    
+
 

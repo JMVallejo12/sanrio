@@ -92,8 +92,8 @@
   padding-right: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-areas: "profile-side-l profile-side-r" "profile-side-l-2 profile-side-r-2" "profile-side-l-2 profile-side-r-2";
+  grid-template-rows: 1fr;
+  grid-template-areas: "profile-side-l profile-side-r";
 }
 
 .profile-side-l {
@@ -229,7 +229,8 @@
 }
 .sections-container .filters {
   padding-top: 10rem;
-  border: 1px solid black;
+  margin-right: 2rem;
+  margin-left: 1rem;
 }
 .sections-container .filters .h2-filters {
   font-family: "Poppins", sans-serif;
@@ -257,12 +258,12 @@
 }
 .sections-container .items {
   padding-top: 9rem;
-  border: 1px solid black;
 }
 .sections-container .items .items-container {
   padding: 0rem;
   display: flex;
   flex-wrap: wrap;
+  width: 75rem;
 }
 .sections-container .items .items-container .card-item {
   display: flex;
