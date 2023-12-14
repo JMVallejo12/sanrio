@@ -39,7 +39,7 @@ fetch(products_url)
 
        <div class="price-options">
            <!-- precio -->
-           <div class="price-container">${product.price}</div>
+           <div class="price-container">${product.price}$</div>
 
            <!-- opciones -->
            <div class="options-container">
@@ -64,108 +64,125 @@ fetch(products_url)
 
 const dropitems = document.querySelectorAll('.dropdown-item')
 
-dropitems.forEach((btn)=>{
 
-    btn.addEventListener("click", function(event){
+function select_btns(){
 
-        event.preventDefault()
+    dropitems.forEach((btn)=>{
 
-        const id = this.id
-        // reemplazamos el string que aparece con un buy adelante para poder buscarlo como clave en nuestro json
-        const newId= id.replace("buy-","")
-
-
-        // identificar si quiere comprar o agregar a favoritos
-        const buybtn = id.startsWith('buy-')
-        console.log(buybtn)
-        const ifbuy = buybtn ? buy : favorites
-        ifbuy()
-
-        // const comprar = id.startsWith('.buy') ? buy : favorites
-
-        function favorites(){
-
-             // comprobando si ese fav ya esta en la lista, para evitar que se repita
-                if (favs.includes(id)){
-
-                    // usando toastify para notificar
-                    Toastify({
-                        text: "Ya esta en la lista",
-                        duration: 3000,
-                        destination: "https://github.com/apvarun/toastify-js",
-                        newWindow: true,
-                        close: true,
-                        gravity: "bottom", // `top` or `bottom`
-                        position: "right", // `left`, `center` or `right`
-                        stopOnFocus: true, // Prevents dismissing of toast on hover
-                        style: {
-                        background: localStorage.getItem('tema')
-                        },
-                        onClick: function(){} // Callback after click
-                    }).showToast();
-
-                }else{
-
-                    // guardando el favorito en el localstorage
-                    favs.push(id)
-
-                    favs_storage = localStorage.setItem('favs',JSON.stringify(favs))
-                    
-                    // toastify
-                    Toastify({
-                        text: "Se agrego a la lista",
-                        duration: 3000,
-                        destination: "https://github.com/apvarun/toastify-js",
-                        newWindow: true,
-                        close: true,
-                        gravity: "bottom", // `top` or `bottom`
-                        position: "right", // `left`, `center` or `right`
-                        stopOnFocus: true, // Prevents dismissing of toast on hover
-                        style: {
-                        background: localStorage.getItem('tema')
-                        },
-                        onClick: function(){} // Callback after click
-                    }).showToast();
-
-                }
+        btn.addEventListener("click", function(event){
+    
+            event.preventDefault()
+    
+            const id = this.id
+            // reemplazamos el string que aparece con un buy adelante para poder buscarlo como clave en nuestro json
+            const newId= id.replace("buy-","")
+    
+    
+            // identificar si quiere comprar o agregar a favoritos
+            const buybtn = id.startsWith('buy-')
+            console.log(buybtn)
+            let ifbuy = buybtn ? buy : favorites
+            ifbuy(newId)
 
 
-        }
-
-        function buy(){
-
-            console.log("comprar")
-
-            // agregando al carrito
-            cart.push(newId)
-            cart_storage = localStorage.setItem('cart',JSON.stringify(cart))
-            
-            // notificando con toastify
-            Toastify({
-                text: `Se agrego ${newId}, al carrito`,
-                duration: 3000,
-                destination: "https://github.com/apvarun/toastify-js",
-                newWindow: true,
-                close: true,
-                gravity: "bottom", // `top` or `bottom`
-                position: "right", // `left`, `center` or `right`
-                stopOnFocus: true, // Prevents dismissing of toast on hover
-                style: {
-                background: localStorage.getItem('tema')
-                },
-                onClick: function(){} // Callback after click
-            }).showToast();
-
-        }
-
+        })
+    
     })
 
-})
+}
+    
+    
+    
+    
+      
+
+            select_btns()
+
+
+
+
 
 })
 
 })
+
+
 .catch(error => console.log("Error en la carga de datos"))
+
+
+function favorites(newId){
+    
+    // comprobando si ese fav ya esta en la lista, para evitar que se repita
+       if (favs.includes(newId)){
+
+           // usando toastify para notificar
+           Toastify({
+               text: "Ya esta en la lista",
+               duration: 3000,
+               destination: "https://github.com/apvarun/toastify-js",
+               newWindow: true,
+               close: true,
+               gravity: "bottom", // `top` or `bottom`
+               position: "right", // `left`, `center` or `right`
+               stopOnFocus: true, // Prevents dismissing of toast on hover
+               style: {
+               background: localStorage.getItem('tema')
+               },
+               onClick: function(){} // Callback after click
+           }).showToast();
+
+       }else{
+
+           // guardando el favorito en el localstorage
+           favs.push(newId)
+
+           localStorage.setItem('favs',JSON.stringify(favs))
+           
+           // toastify
+           Toastify({
+               text: "Se agrego a la lista",
+               duration: 3000,
+               destination: "https://github.com/apvarun/toastify-js",
+               newWindow: true,
+               close: true,
+               gravity: "bottom", // `top` or `bottom`
+               position: "right", // `left`, `center` or `right`
+               stopOnFocus: true, // Prevents dismissing of toast on hover
+               style: {
+               background: localStorage.getItem('tema')
+               },
+               onClick: function(){} // Callback after click
+           }).showToast();
+
+       }
+
+}
+
+function buy(newId){
+    
+    console.log("comprar")
+
+    // agregando al carrito
+    cart.push(newId)
+    cart_storage = localStorage.setItem('cart',JSON.stringify(cart))
+    
+    // notificando con toastify
+    Toastify({
+        text: `Se agrego ${newId}, al carrito`,
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+        background: localStorage.getItem('tema')
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
+
+}
 
 // seleccionamos todos los checkbox para hacer un filtro
 const check = document.querySelectorAll('.checkbox')
@@ -213,7 +230,7 @@ check.forEach((check)=>{
 
                     <div class="price-options">
                         <!-- precio -->
-                        <div class="price-container">${product.price}</div>
+                        <div class="price-container">${product.price}$</div>
 
                         <!-- opciones -->
                         <div class="options-container">
@@ -223,21 +240,23 @@ check.forEach((check)=>{
                                 OPCIONES
                                 </button>
                                 <ul class="dropdown-menu drop-style">
-                                <li><a class="dropdown-item" href="#" id="${product.name}">FAVORITOS</a></li>
+                                <li><a class="dropdown-item" href="#" id="${product.name}" onclick="favorites('${product.name}')">FAVORITOS</a></li>
+                                <li><a class="dropdown-item" href="#" id="buy-${product.name}" onclick="buy('${product.name}')">COMPRAR</a></li>
+
                                 </ul>
                             </div>
                         </div>
                     </div>`
 
-
             }))
-
-
         })
-        
+        .catch(error => console.log("Error"))
     })
 
 })
+
+
+
 
        
 

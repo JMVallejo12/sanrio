@@ -1,7 +1,17 @@
 [
-    {"name": "LittleTwinStars Classic Logo T-Shirt", "type": "shirt", "price": "19$", "img": "../assets/shirt-1.webp"},
-    {"name": "LittleTwinStars Sanrio Original Graphic Tee", "type": "shirt", "price": "22$", "img": "../assets/shirt-2.jpg"},
-    {"name": "Hello Kitty Cowboy Hat Tee", "type": "shirt", "price": "15$", "img": "../assets/shirt-3.webp"},
-    {"name": "Hello Kitty Wild West Tee", "type": "shirt", "price": "19.99$", "img": "../assets/shirt-4.webp"},
-    {"name": "Hello Kitty x Dumbgood Butterfly Glitter Sweatpants", "type": "pants", "price": "90$", "img": "../assets/pants-1.webp"}
+    {"name": "LittleTwinStars Classic Logo T-Shirt", "type": "shirt", "price": 19.00, "img": "../assets/shirt-1.webp"},
+    {"name": "LittleTwinStars Sanrio Original Graphic Tee", "type": "shirt", "price": 22.00, "img": "../assets/shirt-2.jpg"},
+    {"name": "Hello Kitty Cowboy Hat Tee", "type": "shirt", "price": 15.00, "img": "../assets/shirt-3.webp"},
+    {"name": "Hello Kitty Wild West Tee", "type": "shirt", "price": 19.99, "img": "../assets/shirt-4.webp"},
+    {"name": "Hello Kitty x Dumbgood Butterfly Glitter Sweatpants", "type": "pants", "price": 90.00, "img": "../assets/pants-1.webp"},
+    {"name": "Pochacco x Dumbgood Tie Dye Sweatpants", "type": "pants", "price": 59.50, "img": "../assets/pants-2.webp"},
+    {"name": "Hello Kitty x Dumbgood Unicorn Glitter Sweatpants (Black)", "type": "pants", "price": 45.00, "img": "../assets/pants-4.webp"},
+    {"name": "Monkichi x Dumbgood Puff Print Gold Boxing Shorts", "type": "pants", "price": 52.00, "img": "../assets/pants-3.webp"},
+    {"name": "Hello Kitty x Smak Parlour All-over Print Bows Top", "type": "dress", "price": 58.00, "img": "../assets/dress-1.webp"},
+    {"name": "Hello Kitty x Smak Parlour Red Bicycle Mini Skirt", "type": "dress", "price": 58.00, "img": "../assets/dress-2.webp"},
+    {"name": "Hello Kitty x Pusheen Lavender Clouds Suspender Skirt", "type": "dress", "price": 9.00, "img": "../assets/dress-3.webp"},
+    {"name": "Deery-Lou x Dumbgood Cargo Skirt", "type": "dress", "price": 65.00, "img": "../assets/dress-4.webp"}
+
+    
+
 ]

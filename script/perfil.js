@@ -149,7 +149,7 @@ fetch(products_url)
     
                 <div class="price-options">
                     <!-- precio -->
-                    <div class="price-container">${producto_card.price}</div>
+                    <div class="price-container">${producto_card.price}$</div>
     
                     <!-- opciones -->
                     <div class="options-container">
@@ -193,10 +193,26 @@ fetch(products_url)
             const index = favs_obj.indexOf(id)
             favs_obj.splice(index, 1)
             localStorage.setItem('favs',JSON.stringify(favs_obj))
+
+            // notificando con toastify
+            Toastify({
+                text: "Se elimino de favoritos",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "bottom", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: colorbg
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
+
             update_favs()
  
  
-         // poner un toastify para que notifique al usuario de que se borro y que recargue la pagina
         
 
          }
