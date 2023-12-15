@@ -64,7 +64,7 @@ fetch(products_url)
 
 const dropitems = document.querySelectorAll('.dropdown-item')
 
-
+// funcion que recorre el dropdrown para obtener la id, y poder utilizarla para las diferentes funciones
 function select_btns(){
 
     dropitems.forEach((btn)=>{
@@ -90,13 +90,8 @@ function select_btns(){
     })
 
 }
-    
-    
-    
-    
-      
-
-            select_btns()
+// se llama a la funcion para hacer funcionar los botones respectivamente
+select_btns()
 
 
 
@@ -110,6 +105,7 @@ function select_btns(){
 .catch(error => console.log("Error en la carga de datos"))
 
 
+// funcion para agregar a favoritos que recibe la id como parametro
 function favorites(newId){
     
     // comprobando si ese fav ya esta en la lista, para evitar que se repita
@@ -158,6 +154,7 @@ function favorites(newId){
 
 }
 
+// funcion para comprar que recibe la id del producto como parametro
 function buy(newId){
     
     console.log("comprar")
@@ -195,7 +192,6 @@ check.forEach((check)=>{
 
         // utilizamos el atributo data filter de nuestros checkbox para obtener el producto que se quiere filtrar
         const filter_product = check.getAttribute('data-filter')
-        console.log(filter_product)
 
 
         fetch(products_url)
@@ -205,9 +201,20 @@ check.forEach((check)=>{
             // esta linea usa un operador ternario para verificar si el checkbox esta marcado, si esta marcado
             // aplica los filtros, de lo contrario, muestra toda la data traida del json
             const products_filter = check.checked ? data.filter(product => product.type === filter_product) : data
-            itemscontainer.innerHTML = ``
+            
+            // en esta linea, a diferencia de la anterior, se tiene que filtrar dentro de un rango de precios
+            // como los precios que se dividen, se filtra usando el valor maximo, y con un condicional para botener un minimo
+            // desde un numero que no es cero, se divide el maximo obtenido a la mitad, para generar un numero minimo para filtrar
+            const filter_price = check.checked ? data.filter(product => product.price <= filter_product && product.price >= filter_product / 2) : data
+            
 
             console.log(products_filter)
+            console.log(filter_price)
+            console.log(filter_product)
+            // para que se eliminen todos los articulos generados y se generen solamente los filtrados
+            itemscontainer.innerHTML = ``
+
+            
 
             products_filter.forEach((product=>{
 
@@ -242,11 +249,55 @@ check.forEach((check)=>{
                                 <ul class="dropdown-menu drop-style">
                                 <li><a class="dropdown-item" href="#" id="${product.name}" onclick="favorites('${product.name}')">FAVORITOS</a></li>
                                 <li><a class="dropdown-item" href="#" id="buy-${product.name}" onclick="buy('${product.name}')">COMPRAR</a></li>
-
-                                </ul>
+                                // Se utiliza la funcion onlick, para poder llamar a las funciones de buy y favorites respectivamente
+                                // se hizo de esta manera, ya que daba error al tratar de agregar o comprar un item, luego de haberlo filtrado con los checkbox
+                                </ul>   
                             </div>
                         </div>
                     </div>`
+
+            }))
+
+            filter_price.forEach((product =>{
+
+
+                itemscontainer.innerHTML += `
+
+                    <div class="card-item" id="shirt-1">
+                    <!-- foto -->
+                    <div class="img-product-container">
+                        <img src="${product.img}" alt="Imagen de una camiseta de littletwinstars" class="img-product">
+
+                    </div>
+
+                    <!-- nombre -->
+                    <div class="name-product-container">
+                        <p class="p-product" id="shirt-value">${product.name}</p>
+                    </div>
+
+                    <!-- precio y opciones -->
+
+                    <div class="price-options">
+                        <!-- precio -->
+                        <div class="price-container">${product.price}$</div>
+
+                        <!-- opciones -->
+                        <div class="options-container">
+
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle btn-options" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                OPCIONES
+                                </button>
+                                <ul class="dropdown-menu drop-style">
+                                <li><a class="dropdown-item" href="#" id="${product.name}" onclick="favorites('${product.name}')">FAVORITOS</a></li>
+                                <li><a class="dropdown-item" href="#" id="buy-${product.name}" onclick="buy('${product.name}')">COMPRAR</a></li>
+                                // Se utiliza la funcion onlick, para poder llamar a las funciones de buy y favorites respectivamente
+                                // se hizo de esta manera, ya que daba error al tratar de agregar o comprar un item, luego de haberlo filtrado con los checkbox
+                                </ul>   
+                            </div>
+                        </div>
+                    </div>`
+
 
             }))
         })
