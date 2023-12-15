@@ -4,24 +4,9 @@ let cart = JSON.parse(localStorage.getItem('cart')) || []
 
 
 
-
-// trayendo la id de mi container
-
-const itemscontainer = document.getElementById("items-container")
-
-
-// declarando mi variable de url de mi json
-const products_url = "/products.json"
-
-// haciendo fetch a mi json de manera local para mostrar las cards con los datos
-fetch(products_url)
-.then(response => response.json())
-.then(data => {
-
-    data.forEach(product => {
-    
-       
-       itemscontainer.innerHTML += `
+// funcion para generar autameticamente los html de los productos
+function print_cards(product){
+    itemscontainer.innerHTML += `
 
        <div class="card-item" id="shirt-1">
        <!-- foto -->
@@ -49,8 +34,8 @@ fetch(products_url)
                    OPCIONES
                    </button>
                    <ul class="dropdown-menu drop-style">
-                   <li><a class="dropdown-item" href="#" id="${product.name}">FAVORITOS</a></li>
-                   <li><a class="dropdown-item" href="#" id="buy-${product.name}">COMPRAR</a></li>
+                   <li><a class="dropdown-item" href="#" id="${product.name}" onclick="favorites('${product.name}')">FAVORITOS</a></li>
+                    <li><a class="dropdown-item" href="#" id="buy-${product.name}" onclick="buy('${product.name}')">COMPRAR</a></li>
                    </ul>
                </div>
            </div>
@@ -58,49 +43,27 @@ fetch(products_url)
 
 
        `
-// Agregando a favoritos
-
-// seleccionando todos los elementos del dropdown
-
-const dropitems = document.querySelectorAll('.dropdown-item')
-
-// funcion que recorre el dropdrown para obtener la id, y poder utilizarla para las diferentes funciones
-function select_btns(){
-
-    dropitems.forEach((btn)=>{
-
-        btn.addEventListener("click", function(event){
-    
-            event.preventDefault()
-    
-            const id = this.id
-            // reemplazamos el string que aparece con un buy adelante para poder buscarlo como clave en nuestro json
-            const newId= id.replace("buy-","")
-    
-    
-            // identificar si quiere comprar o agregar a favoritos
-            const buybtn = id.startsWith('buy-')
-            console.log(buybtn)
-            let ifbuy = buybtn ? buy : favorites
-            ifbuy(newId)
-
-
-        })
-    
-    })
-
 }
-// se llama a la funcion para hacer funcionar los botones respectivamente
-select_btns()
 
+// trayendo la id de mi container
+const itemscontainer = document.getElementById("items-container")
 
+// declarando mi variable de url de mi json
+const products_url = "/products.json"
 
+// haciendo fetch a mi json de manera local para mostrar las cards con los datos
+fetch(products_url)
+.then(response => response.json())
+.then(data => {
 
+    // se coloca este inner para evitar un duplicado de los artculos
+    itemscontainer.innerHTML = ``
 
+    data.forEach(product => {
+        print_cards(product)
 })
 
 })
-
 
 .catch(error => console.log("Error en la carga de datos"))
 
@@ -192,125 +155,63 @@ check.forEach((check)=>{
 
         // utilizamos el atributo data filter de nuestros checkbox para obtener el producto que se quiere filtrar
         const filter_product = check.getAttribute('data-filter')
+        console.log(filter_product)
 
-
+        // hacieno fetch de el json local y guardandolo en data
         fetch(products_url)
         .then(response => response.json())
         .then(data => {
-
-            // esta linea usa un operador ternario para verificar si el checkbox esta marcado, si esta marcado
-            // aplica los filtros, de lo contrario, muestra toda la data traida del json
-            const products_filter = check.checked ? data.filter(product => product.type === filter_product) : data
             
-            // en esta linea, a diferencia de la anterior, se tiene que filtrar dentro de un rango de precios
-            // como los precios que se dividen, se filtra usando el valor maximo, y con un condicional para botener un minimo
-            // desde un numero que no es cero, se divide el maximo obtenido a la mitad, para generar un numero minimo para filtrar
-            const filter_price = check.checked ? data.filter(product => product.price <= filter_product && product.price >= filter_product / 2) : data
-            
-
-            console.log(products_filter)
-            console.log(filter_price)
-            console.log(filter_product)
-            // para que se eliminen todos los articulos generados y se generen solamente los filtrados
             itemscontainer.innerHTML = ``
 
-            
+            // constante que almacena el array del metodo filter aplicado sobre data
+            const product_filter = data.filter((product =>{
 
-            products_filter.forEach((product=>{
+                // checkeado si el checkbox esta activo o no
+                if(check.checked){
 
+                    // haciendo un switch para cada caso del filtro
+                    
+                    switch(filter_product){
 
-                itemscontainer.innerHTML += `
+                        case "shirt":
+                            return product.type === "shirt"
 
-                    <div class="card-item" id="shirt-1">
-                    <!-- foto -->
-                    <div class="img-product-container">
-                        <img src="${product.img}" alt="Imagen de una camiseta de littletwinstars" class="img-product">
+                        case "pants":
+                            return product.type === "pants"
 
-                    </div>
+                        case "dress":
+                            return product.type === "dress"
 
-                    <!-- nombre -->
-                    <div class="name-product-container">
-                        <p class="p-product" id="shirt-value">${product.name}</p>
-                    </div>
+                        case "20":
+                            return product.price <= filter_product && product.price >= filter_product / 2
 
-                    <!-- precio y opciones -->
+                        case "40":
+                            return product.price <= filter_product && product.price >= filter_product / 2
 
-                    <div class="price-options">
-                        <!-- precio -->
-                        <div class="price-container">${product.price}$</div>
+                        case "90":
+                            return product.price <= filter_product && product.price >= filter_product / 2
 
-                        <!-- opciones -->
-                        <div class="options-container">
+                        case filter_product:
+                            return product.name.includes(filter_product)
 
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle btn-options" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                OPCIONES
-                                </button>
-                                <ul class="dropdown-menu drop-style">
-                                <li><a class="dropdown-item" href="#" id="${product.name}" onclick="favorites('${product.name}')">FAVORITOS</a></li>
-                                <li><a class="dropdown-item" href="#" id="buy-${product.name}" onclick="buy('${product.name}')">COMPRAR</a></li>
-                                // Se utiliza la funcion onlick, para poder llamar a las funciones de buy y favorites respectivamente
-                                // se hizo de esta manera, ya que daba error al tratar de agregar o comprar un item, luego de haberlo filtrado con los checkbox
-                                </ul>   
-                            </div>
-                        </div>
-                    </div>`
+                        default:
+                            break;
+                    }
+                }else{
+                    // en caso de que este apagado el checkbox, muestra toda la data del json
+                    return data
+                }
+        }))
 
-            }))
-
-            filter_price.forEach((product =>{
-
-
-                itemscontainer.innerHTML += `
-
-                    <div class="card-item" id="shirt-1">
-                    <!-- foto -->
-                    <div class="img-product-container">
-                        <img src="${product.img}" alt="Imagen de una camiseta de littletwinstars" class="img-product">
-
-                    </div>
-
-                    <!-- nombre -->
-                    <div class="name-product-container">
-                        <p class="p-product" id="shirt-value">${product.name}</p>
-                    </div>
-
-                    <!-- precio y opciones -->
-
-                    <div class="price-options">
-                        <!-- precio -->
-                        <div class="price-container">${product.price}$</div>
-
-                        <!-- opciones -->
-                        <div class="options-container">
-
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle btn-options" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                OPCIONES
-                                </button>
-                                <ul class="dropdown-menu drop-style">
-                                <li><a class="dropdown-item" href="#" id="${product.name}" onclick="favorites('${product.name}')">FAVORITOS</a></li>
-                                <li><a class="dropdown-item" href="#" id="buy-${product.name}" onclick="buy('${product.name}')">COMPRAR</a></li>
-                                // Se utiliza la funcion onlick, para poder llamar a las funciones de buy y favorites respectivamente
-                                // se hizo de esta manera, ya que daba error al tratar de agregar o comprar un item, luego de haberlo filtrado con los checkbox
-                                </ul>   
-                            </div>
-                        </div>
-                    </div>`
-
-
-            }))
+        // hacieno un foreach para recorrer sobre cada producto filtrado y mostrandolo con la funcion print cards
+        product_filter.forEach((product) =>{
+            print_cards(product)
         })
-        .catch(error => console.log("Error"))
+
     })
+    .catch(error => console.log("Error"))
 
 })
-
-
-
-
-       
-
-
-
+})
 

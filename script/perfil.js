@@ -107,6 +107,43 @@ function change_color(color){
 
 }
 
+// eliminando un favorito
+
+function deleteitem(id){
+
+    // borrando el elemento de el localstorage
+    const favs_obj = JSON.parse(localStorage.getItem('favs'))
+    console.log(favs_obj)
+    const index = favs_obj.indexOf(id)
+    favs_obj.splice(index, 1)
+    localStorage.setItem('favs',JSON.stringify(favs_obj))
+
+    // notificando con toastify
+    Toastify({
+        text: "Se elimino de favoritos",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: colorbg
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
+    update_favs()
+
+ }
+
+ function buyitem(){
+
+    console.log("comprar")
+
+ }
+
 function update_favs(){
 
 // constantes de mi id del dom y la lista del localstorage
@@ -125,9 +162,9 @@ fetch(products_url)
 
     favs_list.forEach(fav => {
 
+        // despues de recorrer el favlist, se encuentra el producto en la json y se compara ocn la lista de favoritos
         const producto_card = data.find(producto => producto.name === fav)
         
-        console.log(producto_card)
 
         if (producto_card){
     
@@ -159,8 +196,8 @@ fetch(products_url)
                             OPCIONES
                             </button>
                             <ul class="dropdown-menu drop-style">
-                            <li><a class="dropdown-item" href="#" id="${producto_card.name}">ELIMINAR</a></li>
-                            <li><a class="dropdown-item" href="#" id="buy-${producto_card.name}">COMPRAR</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="deleteitem('${producto_card.name}')" id="${producto_card.name}">ELIMINAR</a></li>
+                            <li><a class="dropdown-item" href="#" onclick='buyitem('${producto_card.name}')" id="buy-${producto_card.name}">COMPRAR</a></li>
 
                             </ul>
                             
@@ -168,68 +205,10 @@ fetch(products_url)
                     </div>
                 </div>
         
-        ` 
- // eliminando un favorito
+        ` }
 
- const dropdowndelete = document.querySelectorAll('.dropdown-item')
-
- dropdowndelete.forEach((deletebuy) =>{
- 
-     deletebuy.addEventListener("click", function(event){
- 
-         event.preventDefault()
-         const id = this.id
-         const newId = id.replace("buy-","")
-
-         const btndelete = id.startsWith('buy')
-         const delete_select = btndelete ? buyitem : deleteitem
-         delete_select()
-
-         function deleteitem(){
-
-            // borrando el elemento de el localstorage
-            const favs_obj = JSON.parse(localStorage.getItem('favs'))
-            console.log(favs_obj)
-            const index = favs_obj.indexOf(id)
-            favs_obj.splice(index, 1)
-            localStorage.setItem('favs',JSON.stringify(favs_obj))
-
-            // notificando con toastify
-            Toastify({
-                text: "Se elimino de favoritos",
-                duration: 3000,
-                destination: "https://github.com/apvarun/toastify-js",
-                newWindow: true,
-                close: true,
-                gravity: "bottom", // `top` or `bottom`
-                position: "right", // `left`, `center` or `right`
-                stopOnFocus: true, // Prevents dismissing of toast on hover
-                style: {
-                  background: colorbg
-                },
-                onClick: function(){} // Callback after click
-              }).showToast();
-
-            update_favs()
- 
- 
-        
-
-         }
-
-         function buyitem(){
-
-            console.log("comprar")
-
-         }
-     })
- })
-        }else{
-
-            favcontainer.innerHTML = ``
-        }
+        })
     })
-})
 }
 
 update_favs()
