@@ -138,12 +138,6 @@ function deleteitem(id){
 
  }
 
- function buyitem(){
-
-    console.log("comprar")
-
- }
-
 function update_favs(){
 
 // constantes de mi id del dom y la lista del localstorage
@@ -197,7 +191,7 @@ fetch(products_url)
                             </button>
                             <ul class="dropdown-menu drop-style">
                             <li><a class="dropdown-item" href="#" onclick="deleteitem('${producto_card.name}')" id="${producto_card.name}">ELIMINAR</a></li>
-                            <li><a class="dropdown-item" href="#" onclick='buyitem('${producto_card.name}')" id="buy-${producto_card.name}">COMPRAR</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="buy('${producto_card.name}')" id="buy-${producto_card.name}">COMPRAR</a></li>
 
                             </ul>
                             
@@ -210,6 +204,35 @@ fetch(products_url)
         })
     })
 }
+
+let cart = JSON.parse(localStorage.getItem('cart')) || []
+
+
+function buy(newId){
+
+    event.preventDefault()
+
+    // agregando al carrito
+    cart.push(newId)
+    cart_storage = localStorage.setItem('cart',JSON.stringify(cart))
+    
+    // notificando con toastify
+    Toastify({
+        text: `Se agrego el item al carrito`,
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+        background: localStorage.getItem('tema')
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
+}
+
 
 update_favs()
 

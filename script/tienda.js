@@ -70,13 +70,15 @@ fetch(products_url)
 
 // funcion para agregar a favoritos que recibe la id como parametro
 function favorites(newId){
+
+    event.preventDefault()
     
     // comprobando si ese fav ya esta en la lista, para evitar que se repita
        if (favs.includes(newId)){
 
            // usando toastify para notificar
            Toastify({
-               text: "Ya esta en la lista",
+               text: "Ya esta en la lista de favoritos",
                duration: 3000,
                destination: "https://github.com/apvarun/toastify-js",
                newWindow: true,
@@ -119,16 +121,16 @@ function favorites(newId){
 
 // funcion para comprar que recibe la id del producto como parametro
 function buy(newId){
-    
-    console.log("comprar")
 
+    event.preventDefault()
+    
     // agregando al carrito
     cart.push(newId)
     cart_storage = localStorage.setItem('cart',JSON.stringify(cart))
     
     // notificando con toastify
     Toastify({
-        text: `Se agrego ${newId}, al carrito`,
+        text: `Se agrego el item al carrito`,
         duration: 3000,
         destination: "https://github.com/apvarun/toastify-js",
         newWindow: true,
@@ -143,6 +145,7 @@ function buy(newId){
     }).showToast();
 
 }
+
 
 // seleccionamos todos los checkbox para hacer un filtro
 const check = document.querySelectorAll('.checkbox')
@@ -210,8 +213,18 @@ check.forEach((check)=>{
         })
 
     })
-    .catch(error => console.log("Error"))
+    .catch(error => console.log("Error con el filtro"))
 
 })
 })
 
+// utilizando api del dolar en uruguay
+
+const dolar_url = "https://cotizaciones-brou-v2-e449.fly.dev/currency/latest"
+
+fetch(dolar_url)
+.then(response => response.json())
+.then(data => {
+
+    console.log(data.rates)
+})
