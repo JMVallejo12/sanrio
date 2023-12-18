@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../styles/styles.css">
     <title>Document</title>
@@ -45,17 +46,12 @@
 
     <!-- aca comienza el uso de grids -->
     <div class="grid-container">
-
-
         <!-- parte de foto de perfil y nombre de usuario -->
         <section class="profile-side-l">
-
             <article class="img-profile-container">
-
             </article>
-
             <article class="username">
-                <div class="h3-username">
+                <div class="h3-username" id="username">
                     NOMBRE DE USUARIO
                 </div>
             </article>
@@ -63,9 +59,18 @@
             <article class="settings">
                 <div class="settings-container">
                     <h3 class="h3-settings">CAMBIAR DE NOMBRE</h3>
+                    <div><a href="" class="icon-settings" id="change-name"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+                      </svg></a>
+                    </div>
                 </div>
                 <div class="settings-container">
                     <h3 class="h3-settings">IR AL CARRITO</h3>
+                    <div>
+                        <a href="../pages/carrito.html" class="icon-settings"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-bag-heart cart-icon" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0M14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1M8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
+                          </svg></a>
+                    </div>
                 </div>
             </article>
 
@@ -87,32 +92,32 @@
                     </div>
                     
                         <div class="ctn-1">
-                            <a href=""><img src="../assets/my-melody-char.avif" alt="Imagen de mymelody" class="img-char"></a>
+                            <img src="../assets/my-melody-char.avif" alt="Imagen de mymelody" class="img-char">
                             <button class="btn-char" id="btn-melody">CAMBIAR</button>
 
                         </div>
 
                     
                     <div class="ctn-1">
-                        <a href=""><img src="../assets/cinnamorol-char.avif" alt="Imagen de cinammorol" class="img-char"></a>
+                        <img src="../assets/cinnamorol-char.avif" alt="Imagen de cinammorol" class="img-char">
                         <button class="btn-char" id="btn-cinnamoroll">CAMBIAR</button>
 
                     </div>
 
                     <div class="ctn-1">
-                        <a href=""><img src="../assets/keroppi-char.avif" alt="Imagen de kuromi" class="img-char"></a>
+                        <img src="../assets/keroppi-char.avif" alt="Imagen de kuromi" class="img-char">
                         <button class="btn-char" id="btn-keroppi">CAMBIAR</button>
 
                     </div>
                     
                     <div class="ctn-1">
-                        <a href=""><img src="../assets/pompompurin.avif" alt="imagen de pompompurin" class="img-char"></a>
+                        <img src="../assets/pompompurin.avif" alt="imagen de pompompurin" class="img-char">
                         <button class="btn-char" id="btn-pompompurin">CAMBIAR</button>
                     </div>
                     
                     
                     <div class="ctn-1">
-                        <a href=""><img src="../assets/puchacco-char.avif" alt="imagen de puchacco" class="img-char"></a>
+                        <img src="../assets/puchacco-char.avif" alt="imagen de puchacco" class="img-char">
                         <button class="btn-char" id="btn-pochacco">CAMBIAR</button>
                     </div>
                     
@@ -121,7 +126,7 @@
                     
                     
                     <div class="ctn-1">
-                        <a href=""><img src="../assets/littletwinstars.avif" alt="imagen de littletwinstars" class="img-char"></a>
+                        <img src="../assets/littletwinstars.avif" alt="imagen de littletwinstars" class="img-char">
                         <button class="btn-char" id="btn-little">CAMBIAR</button>
                     </div>
                 </div>

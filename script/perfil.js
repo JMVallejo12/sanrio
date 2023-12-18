@@ -1,5 +1,7 @@
-// agregando el header
+// creando la informacion de nombre de usuario
+let username = localStorage.getItem('name')
 
+// agregando el header
 const header = document.getElementById("header")
 
 // botones
@@ -107,10 +109,13 @@ function change_color(color){
 
 }
 
+
+
 // eliminando un favorito
 
 function deleteitem(id){
 
+    event.preventDefault()
     // borrando el elemento de el localstorage
     const favs_obj = JSON.parse(localStorage.getItem('favs'))
     console.log(favs_obj)
@@ -233,7 +238,66 @@ function buy(newId){
     }).showToast();
 }
 
+// declarando el boton de nuestro documento
+const change_name_btn = document.getElementById("change-name")
 
+// creando el evento para llamar a la funcion
+change_name_btn.addEventListener("click",(event)=>{
+
+    // evitando que el boton tenga el comportamiento por defecto
+    event.preventDefault()
+
+    // ejecutando la funcion para cambiar el nombre
+    change_name()
+
+})
+
+// funcion para cambiar el nombre
+function change_name(){
+
+    event.preventDefault()
+
+    // sweet alert modificado
+    const { value: formValues } = Swal.fire({
+        title: "CAMBIA TU NOMBRE DE USUARIO",
+        html: `
+          <input id="swal-input1" class="swal2-input">
+        `,
+        focusConfirm: false,
+        preConfirm: () => {
+            // guarda el nombre ingresado por input y lo guarda en el localstorage
+            const response_name = document.getElementById("swal-input1").value
+            localStorage.setItem('name',response_name)
+            update_name()
+            
+        }
+      });
+      if (formValues) {
+        Swal.fire(JSON.stringify(formValues));
+      }
+
+
+}
+
+// trayendo el id del username
+const username_label = document.getElementById("username")
+
+function update_name(){
+    up_user = localStorage.getItem('name')
+    const user_false = up_user ? username_label.innerHTML = `${up_user}` : username_label.innerHTML = `NOMBRE DE USUARIO`
+    
+}
+
+// funcion para verificar el nombre de usuario cuando cargue la pagina
+// window.onload = ()=>{
+
+//     username_label.innerHTML = ``
+
+//     up_user = localStorage.getItem('name')
+//     username_label.innerHTML = `${up_user}`
+    
+// }
+update_name()
 update_favs()
 
 

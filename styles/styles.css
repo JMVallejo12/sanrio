@@ -118,12 +118,17 @@
   display: flex;
   border-bottom: 2px solid rgb(165, 81, 208);
   width: 72%;
+  align-items: center;
 }
 .profile-side-l .settings .settings-container .h3-settings {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 300;
-  padding-top: 0.4rem;
+  padding-top: 0.8rem;
+  width: 17rem;
+}
+.profile-side-l .settings .settings-container .icon-settings {
+  color: black;
 }
 
 .profile-side-r {

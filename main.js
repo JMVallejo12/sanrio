@@ -7,8 +7,5 @@ window.onload = function(){
     console.log(tema)
     header.style.backgroundColor = tema
 
-    // 
-
-    
 
 }
