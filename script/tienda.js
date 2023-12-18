@@ -145,8 +145,6 @@ function buy(newId){
     }).showToast();
 
 }
-
-
 // seleccionamos todos los checkbox para hacer un filtro
 const check = document.querySelectorAll('.checkbox')
 
@@ -206,15 +204,12 @@ check.forEach((check)=>{
                     return data
                 }
         }))
-
         // hacieno un foreach para recorrer sobre cada producto filtrado y mostrandolo con la funcion print cards
         product_filter.forEach((product) =>{
             print_cards(product)
         })
-
     })
     .catch(error => console.log("Error con el filtro"))
-
 })
 })
 
@@ -236,3 +231,4 @@ fetch(dolar_url)
 
 })
 .catch("Error con la API del dolar")
+

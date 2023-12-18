@@ -331,7 +331,7 @@ body {
   color: rgb(165, 81, 208);
   text-align: center;
   font-size: 42px;
-  margin-right: 10rem;
+  margin-right: 18.2rem;
 }
 .sections-container .items .cart-container {
   height: 3rem;
@@ -343,7 +343,6 @@ body {
   color: rgb(110, 197, 232);
 }
 .sections-container .items .items-container {
-  padding: 0rem;
   display: flex;
   flex-wrap: wrap;
   width: 75rem;
@@ -473,6 +472,66 @@ body {
   background-color: white;
   border: 1px solid black;
   padding: 0.4rem;
+}
+
+.results-container {
+  padding-top: 8rem;
+  display: flex;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.results-container .h1-result {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+}
+.results-container .card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 1rem;
+  height: 320px;
+  width: 250px;
+  background-color: rgb(249, 218, 246);
+}
+.results-container .card-item .img-product-container {
+  display: flex;
+  justify-content: center;
+}
+.results-container .card-item .img-product-container .img-product {
+  height: 190px;
+}
+.results-container .card-item .name-product-container .p-product {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  margin-top: 1rem;
+  text-align: center;
+}
+.results-container .card-item .price-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.9rem;
+}
+.results-container .card-item .price-options .price-container {
+  padding-right: 0.7rem;
+  border-right: 1px solid black;
+}
+.results-container .card-item .price-options .options-container .btn-options {
+  background-color: transparent;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  font-size: 14px;
+}
+.results-container .card-item .price-options .options-container .drop-style {
+  border-radius: 0px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
 }
 
 .welcome {
