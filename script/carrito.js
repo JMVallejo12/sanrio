@@ -161,18 +161,13 @@ function buyalert(){
     }).then((result) => {
     /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
-        Swal.fire("Felicidades!, has comprado los arituclo!", "", "success");
-        
+        Swal.fire("Felicidades!, has comprado los aritculos con exito!", "", "success");
         // vaciando el carrito
         customer_cart = []
         // guardando el estado actual del carrito en el localstorage
         localStorage.setItem('cart',JSON.stringify(customer_cart))
-
-        
-
+        // llamando a al funcion para actualizar el estado del carrito
         update_cart()
-
-
     } else if (result.isDenied) {
         Swal.fire("Compra cancelada", "", "info");
     }

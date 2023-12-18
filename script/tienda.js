@@ -219,12 +219,20 @@ check.forEach((check)=>{
 })
 
 // utilizando api del dolar en uruguay
-
 const dolar_url = "https://cotizaciones-brou-v2-e449.fly.dev/currency/latest"
 
+// trayendo el contenedor de la respuesta de nuestra api
+const api_response_container = document.getElementById("api-dollar-left") 
+const api_response_container_right = document.getElementById("api-dollar-right")
+
+// haciendo fetch a la api de la cotizacion
 fetch(dolar_url)
 .then(response => response.json())
 .then(data => {
 
-    console.log(data.rates)
+    // insertamos las cotizaciones de venta y compra desde la api
+    api_response_container.innerHTML = data.rates.USD.buy
+    api_response_container_right.innerHTML = data.rates.USD.sell
+
 })
+.catch("Error con la API del dolar")

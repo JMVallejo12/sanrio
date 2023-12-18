@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.api {
-  padding-top: 8rem;
-}
-
 .footer .color-space-container {
   background-color: rgb(165, 81, 208);
   height: 200px;
@@ -109,6 +105,26 @@
   width: 18rem;
   border: 4px solid rgb(249, 218, 246);
 }
+.profile-side-l .username .h3-username {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+}
+.profile-side-l .settings {
+  display: flex;
+  flex-direction: column;
+}
+.profile-side-l .settings .settings-container {
+  display: flex;
+  border-bottom: 2px solid rgb(165, 81, 208);
+  width: 72%;
+}
+.profile-side-l .settings .settings-container .h3-settings {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  padding-top: 0.4rem;
+}
 
 .profile-side-r {
   grid-area: profile-side-r;
@@ -175,10 +191,14 @@
   padding: 0.5rem;
 }
 .profile-side-r .item-favs .favs-container {
-  padding: 2rem;
+  padding: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: 40rem;
+  overflow-y: scroll;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
 }
 .profile-side-r .item-favs .favs-container .card-item {
   display: flex;
@@ -227,6 +247,43 @@
   font-size: 14px;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.api {
+  padding-top: 5rem;
+  padding-left: 4rem;
+}
+.api .h2-api {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: rgb(165, 81, 208);
+  font-size: 24px;
+  font-weight: 300;
+}
+.api .api-container {
+  display: flex;
+  justify-content: center;
+}
+.api .api-container .h3-api {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+.api .api-container .h4-api {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+.api .api-container .api {
+  background-color: rgb(249, 218, 246);
+  width: 15%;
+  height: fit-content;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+
 .sections-container {
   display: flex;
   justify-content: space-between;
@@ -261,7 +318,15 @@
   margin: 0.4rem;
 }
 .sections-container .items {
-  padding-top: 9rem;
+  padding-top: 3rem;
+}
+.sections-container .items .h1-shop {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  color: rgb(165, 81, 208);
+  text-align: center;
+  font-size: 42px;
+  margin-right: 10rem;
 }
 .sections-container .items .cart-container {
   height: 3rem;
