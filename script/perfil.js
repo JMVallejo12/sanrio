@@ -159,54 +159,63 @@ fetch(products_url)
 .then(response => response.json())
 .then(data => {
 
-    favs_list.forEach(fav => {
+    if (favs_list === 0){
 
-        // despues de recorrer el favlist, se encuentra el producto en la json y se compara ocn la lista de favoritos
-        const producto_card = data.find(producto => producto.name === fav)
+        favs_list.forEach(fav => {
+
+            // despues de recorrer el favlist, se encuentra el producto en la json y se compara ocn la lista de favoritos
+            const producto_card = data.find(producto => producto.name === fav)
+            
+    
+            if (producto_card){
         
-
-        if (producto_card){
-    
-            favcontainer.innerHTML += `
+                favcontainer.innerHTML += `
+            
+                    <div class="card-item" id="shirt-1">
+                    <!-- foto -->
+                    <div class="img-product-container">
+                        <img src="${producto_card.img}" alt="Imagen de una camiseta de littletwinstars" class="img-product">
         
-                <div class="card-item" id="shirt-1">
-                <!-- foto -->
-                <div class="img-product-container">
-                    <img src="${producto_card.img}" alt="Imagen de una camiseta de littletwinstars" class="img-product">
+                    </div>
+        
+                    <!-- nombre -->
+                    <div class="name-product-container">
+                        <p class="p-product" id="shirt-value">${producto_card.name}</p>
+                    </div>
+        
+                    <!-- precio y opciones -->
+        
+                    <div class="price-options">
+                        <!-- precio -->
+                        <div class="price-container">${producto_card.price}$</div>
+        
+                        <!-- opciones -->
+                        <div class="options-container">
+        
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle btn-options" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                OPCIONES
+                                </button>
+                                <ul class="dropdown-menu drop-style">
+                                <li><a class="dropdown-item" href="#" onclick="deleteitem('${producto_card.name}')" id="${producto_card.name}">ELIMINAR</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="buy('${producto_card.name}')" id="buy-${producto_card.name}">COMPRAR</a></li>
     
-                </div>
-    
-                <!-- nombre -->
-                <div class="name-product-container">
-                    <p class="p-product" id="shirt-value">${producto_card.name}</p>
-                </div>
-    
-                <!-- precio y opciones -->
-    
-                <div class="price-options">
-                    <!-- precio -->
-                    <div class="price-container">${producto_card.price}$</div>
-    
-                    <!-- opciones -->
-                    <div class="options-container">
-    
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle btn-options" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            OPCIONES
-                            </button>
-                            <ul class="dropdown-menu drop-style">
-                            <li><a class="dropdown-item" href="#" onclick="deleteitem('${producto_card.name}')" id="${producto_card.name}">ELIMINAR</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="buy('${producto_card.name}')" id="buy-${producto_card.name}">COMPRAR</a></li>
-
-                            </ul>
-                            
+                                </ul>
+                                
+                            </div>
                         </div>
                     </div>
-                </div>
-        
-        ` }
+            
+            ` }
+    
+            })
+    
+        }else{
 
-        })
+            favcontainer.innerHTML = `No tienes favoritos`
+        }
+
+    
     })
 }
 

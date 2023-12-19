@@ -10,7 +10,7 @@ window.onload = function(){
 
 // trayendo la barra de busqueda con el id
 const search_bar = document.getElementById("busqueda")
-const products_url_main = "/products.json"
+const products_url_main = "products.json"
 let show_product
 
 fetch(products_url_main)
