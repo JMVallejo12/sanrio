@@ -153,7 +153,7 @@ const favs_list = JSON.parse(localStorage.getItem('favs'))
     favcontainer.innerHTML = ``
 
 // encontrando el producto en la lista
-const products_url = "/products.json"
+const products_url = "../products.json"
 
 fetch(products_url)
 .then(response => response.json())
@@ -288,15 +288,6 @@ function update_name(){
     
 }
 
-// funcion para verificar el nombre de usuario cuando cargue la pagina
-// window.onload = ()=>{
-
-//     username_label.innerHTML = ``
-
-//     up_user = localStorage.getItem('name')
-//     username_label.innerHTML = `${up_user}`
-    
-// }
 update_name()
 update_favs()
 

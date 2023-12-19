@@ -49,7 +49,7 @@ function print_cards(product){
 const itemscontainer = document.getElementById("items-container")
 
 // declarando mi variable de url de mi json
-const products_url = "/products.json"
+const products_url = "../products.json"
 
 // haciendo fetch a mi json de manera local para mostrar las cards con los datos
 fetch(products_url)
