@@ -1,0 +1,8 @@
+@mixin card-1($height, $width, $color){
+
+
+        height: $height;
+        width: $width;
+        background-color: $color;
+
+}

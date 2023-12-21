@@ -159,8 +159,6 @@ fetch(products_url)
 .then(response => response.json())
 .then(data => {
 
-    if (favs_list === 0){
-
         favs_list.forEach(fav => {
 
             // despues de recorrer el favlist, se encuentra el producto en la json y se compara ocn la lista de favoritos
@@ -209,12 +207,6 @@ fetch(products_url)
             ` }
     
             })
-    
-        }else{
-
-            favcontainer.innerHTML = `No tienes favoritos`
-        }
-
     
     })
 }

@@ -1,0 +1,96 @@
+.header{
+
+    height: 60px;
+    background-color: map-get($colores , color-blanco );
+
+    position: fixed;
+    width: 100%;
+
+    padding-top: 0.9rem;
+
+    z-index: 9999;
+
+
+    .nav-bar{
+
+        display: flex;
+
+        justify-content: space-around;
+
+        border-bottom: 1px solid black;
+
+        height: 100%;
+
+        .nav-right{
+
+            display: flex;
+            align-items: center;
+
+            list-style: none;
+            
+            .li-item-r{
+
+                margin-right: 0.3rem;
+                text-decoration: none;
+                color: map-get($colores, color-negro );
+                font-family: map-get($fuentes, fuente-poppins );
+                border: 1px solid map-get($colores, color-negro );
+                padding: 0.5rem;
+                font-size: 12px;
+                transition: 0.3s;
+
+                &:hover{
+
+                    background-color: map-get($colores, color-azul-rosa );
+                    color: map-get($colores, color-blanco );
+
+                }
+
+            }
+
+            
+
+        }
+
+        .nav-left{
+
+            display: flex;
+            align-items: center;
+            list-style: none;
+
+            .li-item-home{
+
+                .sanrio-logo{
+                    width: 125px;
+                    transition: 0.3s ease-in-out;
+                    height: auto;
+
+                    &:hover{
+
+                        width: 135px;
+
+                    }
+                }
+
+
+            }
+
+            .li-item-search{
+
+                margin-left: 3rem;
+                font-family: map-get($fuentes, fuente-poppins );
+
+                height: 30px;
+                width: 300px;
+
+                padding-left: 0.4rem;
+
+                font-size: 14px;
+
+            }
+
+        }
+
+    }
+     
+}

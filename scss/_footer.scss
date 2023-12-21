@@ -1,0 +1,41 @@
+.footer{
+
+    .color-space-container{
+
+        background-color: map-get($colores, color-azul-rosa );
+        height: 200px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: space-around;
+
+
+        .img-container-footer{
+
+            .img-hello-footer{
+
+                height: 90px;
+
+
+            }
+
+        }
+
+        .text-container{
+
+            .p-footer{
+
+                font-family: map-get($fuentes, fuente-poppins );
+                font-size: 24px;
+                text-align: center;
+                font-weight: 600;
+
+            }
+
+        }
+
+    }
+    
+}

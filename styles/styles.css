@@ -90,52 +90,51 @@
   padding-top: 3rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  width: 75%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-template-areas: "profile-side-l profile-side-r";
 }
-
-.profile-side-l {
+.grid-container .profile-side-l {
   grid-area: profile-side-l;
   width: 25rem;
 }
-.profile-side-l .img-profile-container {
+.grid-container .profile-side-l .img-profile-container {
   height: 24rem;
   width: 18rem;
   border: 4px solid rgb(249, 218, 246);
 }
-.profile-side-l .username .h3-username {
+.grid-container .profile-side-l .username .h3-username {
   font-family: "Poppins", sans-serif;
   font-size: 24px;
   font-weight: 300;
 }
-.profile-side-l .settings {
+.grid-container .profile-side-l .settings {
   display: flex;
   flex-direction: column;
 }
-.profile-side-l .settings .settings-container {
+.grid-container .profile-side-l .settings .settings-container {
   display: flex;
   border-bottom: 2px solid rgb(165, 81, 208);
   width: 72%;
   align-items: center;
 }
-.profile-side-l .settings .settings-container .h3-settings {
+.grid-container .profile-side-l .settings .settings-container .h3-settings {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 300;
   padding-top: 0.8rem;
   width: 17rem;
 }
-.profile-side-l .settings .settings-container .icon-settings {
+.grid-container .profile-side-l .settings .settings-container .icon-settings {
   color: black;
 }
-
-.profile-side-r {
+.grid-container .profile-side-r {
   grid-area: profile-side-r;
   width: 60rem;
 }
-.profile-side-r .fav-title {
+.grid-container .profile-side-r .fav-title {
   background-color: rgb(249, 218, 246);
   text-align: center;
   color: rgb(165, 81, 208);
@@ -143,51 +142,51 @@
   font-size: 24px;
   padding: 0.5rem;
 }
-.profile-side-r .img-container {
+.grid-container .profile-side-r .img-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 3.5rem;
 }
-.profile-side-r .img-container .ctn-1 {
+.grid-container .profile-side-r .img-container .ctn-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.profile-side-r .img-container .ctn-1 .img-char {
+.grid-container .profile-side-r .img-container .ctn-1 .img-char {
   height: 100px;
   margin: 1rem;
 }
-.profile-side-r .img-container .ctn-1 .btn-char {
+.grid-container .profile-side-r .img-container .ctn-1 .btn-char {
   width: 60%;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   background-color: transparent;
   border: 1px solid black;
 }
-.profile-side-r .img-container .ctn-1 #btn-hello {
+.grid-container .profile-side-r .img-container .ctn-1 #btn-hello {
   color: rgb(195, 1, 1);
 }
-.profile-side-r .img-container .ctn-1 #btn-melody {
+.grid-container .profile-side-r .img-container .ctn-1 #btn-melody {
   color: rgb(201, 126, 139);
 }
-.profile-side-r .img-container .ctn-1 #btn-cinnamoroll {
+.grid-container .profile-side-r .img-container .ctn-1 #btn-cinnamoroll {
   color: rgb(110, 197, 232);
 }
-.profile-side-r .img-container .ctn-1 #btn-keroppi {
+.grid-container .profile-side-r .img-container .ctn-1 #btn-keroppi {
   color: rgb(0, 158, 0);
 }
-.profile-side-r .img-container .ctn-1 #btn-pompompurin {
+.grid-container .profile-side-r .img-container .ctn-1 #btn-pompompurin {
   color: rgb(226, 226, 0);
 }
-.profile-side-r .img-container .ctn-1 #btn-pochacco {
+.grid-container .profile-side-r .img-container .ctn-1 #btn-pochacco {
   color: rgb(77, 159, 191);
 }
-.profile-side-r .img-container .ctn-1 #btn-little {
+.grid-container .profile-side-r .img-container .ctn-1 #btn-little {
   color: rgb(3, 168, 234);
 }
-.profile-side-r .item-favs .item-title {
+.grid-container .profile-side-r .item-favs .item-title {
   background-color: rgb(249, 218, 246);
   text-align: center;
   color: rgb(165, 81, 208);
@@ -195,7 +194,7 @@
   font-size: 24px;
   padding: 0.5rem;
 }
-.profile-side-r .item-favs .favs-container {
+.grid-container .profile-side-r .item-favs .favs-container {
   padding: 0.5rem;
   display: flex;
   flex-wrap: wrap;
@@ -205,7 +204,7 @@
   margin-bottom: 3rem;
   margin-top: 2rem;
 }
-.profile-side-r .item-favs .favs-container .card-item {
+.grid-container .profile-side-r .item-favs .favs-container .card-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -216,37 +215,37 @@
   width: 250px;
   background-color: rgb(249, 218, 246);
 }
-.profile-side-r .item-favs .favs-container .card-item .img-product-container {
+.grid-container .profile-side-r .item-favs .favs-container .card-item .img-product-container {
   display: flex;
   justify-content: center;
 }
-.profile-side-r .item-favs .favs-container .card-item .img-product-container .img-product {
+.grid-container .profile-side-r .item-favs .favs-container .card-item .img-product-container .img-product {
   height: 190px;
 }
-.profile-side-r .item-favs .favs-container .card-item .name-product-container .p-product {
+.grid-container .profile-side-r .item-favs .favs-container .card-item .name-product-container .p-product {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   margin-top: 1rem;
   text-align: center;
 }
-.profile-side-r .item-favs .favs-container .card-item .price-options {
+.grid-container .profile-side-r .item-favs .favs-container .card-item .price-options {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-left: 0.9rem;
 }
-.profile-side-r .item-favs .favs-container .card-item .price-options .price-container {
+.grid-container .profile-side-r .item-favs .favs-container .card-item .price-options .price-container {
   padding-right: 0.7rem;
   border-right: 1px solid black;
 }
-.profile-side-r .item-favs .favs-container .card-item .price-options .options-container .btn-options {
+.grid-container .profile-side-r .item-favs .favs-container .card-item .price-options .options-container .btn-options {
   background-color: transparent;
   color: black;
   font-family: "Poppins", sans-serif;
   border: none;
   font-size: 14px;
 }
-.profile-side-r .item-favs .favs-container .card-item .price-options .options-container .drop-style {
+.grid-container .profile-side-r .item-favs .favs-container .card-item .price-options .options-container .drop-style {
   border-radius: 0px;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
@@ -291,7 +290,7 @@ body {
 
 .sections-container {
   display: flex;
-  justify-content: space-between;
+  width: 75%;
 }
 .sections-container .filters {
   padding-top: 10rem;

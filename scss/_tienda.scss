@@ -1,0 +1,197 @@
+body{
+
+    overflow-x: hidden;
+}
+
+.api{
+    padding-top: 5rem;
+    padding-left: 4rem;
+
+    .h2-api{
+        text-align: center;
+        font-family: map-get($fuentes, fuente-poppins );
+        color: map-get($colores, color-azul-rosa );
+        font-size: 24px;
+        font-weight: 300;
+    }
+
+    .api-container{
+        display: flex;
+        justify-content: center;
+
+        .h3-api{
+            font-family: map-get($fuentes, fuente-poppins );
+            font-weight: 300;
+            font-size: 20px;
+        }
+        .h4-api{
+            font-family: map-get($fuentes, fuente-poppins );
+            font-weight: 300;
+            font-size: 16px;
+        }
+
+        .api{
+            background-color: map-get($colores, color-rosa-2 );
+            width: 15%;
+            height: fit-content;
+            margin: 0.5rem;
+            padding: 1rem;
+
+        }
+        
+    }
+}
+
+
+.sections-container{
+    display: flex;
+    width: 75%;
+
+    .filters{
+        padding-top: 10rem;
+        margin-right: 2rem;
+        margin-left: 1rem;
+
+        .h2-filters{
+
+            font-family: map-get($fuentes, fuente-poppins );
+            font-size: 24px;
+            text-align: center;
+            padding-top: 0.8rem;
+        }
+
+        .h3-filters{
+            font-family: map-get($fuentes, fuente-poppins );
+            font-size: 16px;
+            padding-top: 0.8rem;
+            border-bottom: 1px solid map-get($colores, color-negro );
+            padding-bottom: 0.2rem;
+
+        }
+
+        .filter-1{
+
+            background-color: map-get($colores, color-rosa-2 );
+            height: fit-content;
+            width: 15rem;
+            padding: 1rem;
+
+            
+            .checkbox{
+
+                font-family: map-get($fuentes, fuente-poppins );
+                font-size: 12px;
+                margin: 0.4rem;
+
+
+            }
+
+        }
+
+
+    }
+
+
+    .items{
+        padding-top: 3rem;
+        .h1-shop{
+
+            font-family: map-get($fuentes, fuente-poppins );
+            font-weight: 300;
+            color: map-get($colores, color-azul-rosa );
+            text-align: center;
+            font-size: 42px;
+            margin-right: 18.2rem;
+        }
+
+       .cart-container{
+            height: 3rem;
+            width: 92%;
+            display: flex;
+            justify-content: right;
+            .cart{
+                .cart-icon{
+                    color: map-get($colores,color-cinnamoroll );
+                }
+
+            }
+            
+
+       }
+
+
+        .items-container{
+            display: flex;
+            flex-wrap: wrap;
+            width: 75rem;
+
+            .card-item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem;
+                margin: 1rem;
+
+                .img-product-container{
+                    display: flex;
+                    justify-content: center;
+
+                    .img-product{
+                        height: 190px;
+                    }
+
+                }
+
+                .name-product-container{
+                    .p-product{
+                        font-family: map-get($fuentes, fuente-poppins );
+                        font-size: 12px;
+                        margin-top: 1rem;
+                        text-align: center;
+                    }
+                }
+
+                .price-options{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-left: 0.9rem;
+                    .price-container{
+                        padding-right: 0.7rem;
+                        border-right: 1px solid black;
+                    }
+
+                    .options-container{
+                        .btn-options{
+                            background-color: transparent;
+                            color: map-get($colores, color-negro );
+                            font-family: map-get($fuentes, fuente-poppins );
+                            border: none;
+                            font-size: 14px;
+                        }
+
+                        .drop-style{
+                            border-radius: 0px;
+                            font-family: map-get($fuentes, fuente-poppins );
+                            font-size: 14px;
+                        }
+
+                    }
+
+                }
+                
+            
+
+                @include card-1(320px, 250px, map-get($colores, color-rosa-2))
+            }
+
+        }
+
+    }  
+
+
+
+
+}
+

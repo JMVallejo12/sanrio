@@ -1,0 +1,85 @@
+.results-container{
+    padding-top: 8rem;
+    display: flex;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .h1-result{
+        font-family: map-get($fuentes, fuente-poppins );
+        font-size: 28px;
+        font-weight: 300;
+    }
+
+    .card-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        margin: 1rem;
+
+        .img-product-container{
+            display: flex;
+            justify-content: center;
+
+            .img-product{
+
+                height: 190px;
+            }
+
+        }
+
+        .name-product-container{
+
+            .p-product{
+
+                font-family: map-get($fuentes, fuente-poppins );
+                font-size: 12px;
+                margin-top: 1rem;
+                text-align: center;
+            }
+
+        }
+
+        .price-options{
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 0.9rem;
+
+            .price-container{
+
+                padding-right: 0.7rem;
+                border-right: 1px solid black;
+
+            }
+
+            .options-container{
+
+                .btn-options{
+
+                    background-color: transparent;
+                    color: map-get($colores, color-negro );
+                    font-family: map-get($fuentes, fuente-poppins );
+                    border: none;
+                    font-size: 14px;
+                }
+                .drop-style{
+
+                    border-radius: 0px;
+                    font-family: map-get($fuentes, fuente-poppins );
+                    font-size: 14px;
+                }
+
+            }
+
+        }
+        
+    
+
+        @include card-1(320px, 250px, map-get($colores, color-rosa-2))
+    }
+}

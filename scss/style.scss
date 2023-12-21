@@ -1,0 +1,20 @@
+// reset de css
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+// imports de parcials
+@import 'maps';
+@import 'mixins';
+@import 'footer';
+@import 'header';
+@import 'miperfil';
+@import 'tienda';
+@import 'carrito';
+@import 'results';
+@import 'index';
+

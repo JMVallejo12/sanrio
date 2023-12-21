@@ -1,0 +1,106 @@
+
+
+
+.cart-items-container{
+    padding-top: 8rem;
+
+    .h1-cart{
+
+        color: map-get($colores, color-azul-rosa );
+        font-family: map-get($fuentes, fuente-poppins );
+        text-align: center;
+
+    }
+
+    .cart-items{
+        padding: 2rem;
+
+        .price-total-container{
+
+            display: flex;
+            align-items:end;
+            padding-left: 3rem;
+            padding-right: 3rem;
+            flex-direction: column;
+
+            .h4-cart{
+
+                margin-bottom: 1rem;
+                font-weight: 300;
+                font-family: map-get($fuentes, fuente-poppins );
+                text-align: center;
+                width: 100%;
+                font-size: 28px;
+            }
+
+            .btn-cart-buy{
+                color: map-get($colores, color-azul-rosa );
+                background-color: map-get($colores, color-blanco);
+                border: 1px solid black;
+                padding: 0.4rem;
+            }
+
+            .h4-cart-price{
+
+                font-family: map-get($fuentes, fuente-poppins);
+                font-size: 20px;
+                padding: 1rem;
+            }
+        }
+
+        .cart-style{
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+            margin: 1rem;
+
+            .img-cart-container{
+                width: 20rem;
+                .img-cart{
+                    height: 100%;
+                }
+            }
+
+            .low-cart-info{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .h3-cart{
+
+                    font-family: map-get($fuentes, fuente-poppins );
+                    font-size: 24px;
+                    padding: 1rem;
+                    width: 30rem;
+                }
+
+                .h4-cart{
+
+                    font-family: map-get($fuentes, fuente-poppins);
+                    font-size: 20px;
+                    padding: 1rem;
+                }
+               
+            }
+
+            .btn-cart{
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .btn-cart-style{
+
+                    color: map-get($colores, color-azul-rosa );
+                    background-color: map-get($colores, color-blanco);
+                    border: 1px solid black;
+                    padding: 0.4rem;
+                }
+            }
+
+            @include card-1 (200px,100%,map-get($colores, color-rosa-2))
+        }
+
+    }
+    
+}

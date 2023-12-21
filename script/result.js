@@ -7,8 +7,10 @@ console.log(show_product)
 
 const results = document.getElementById("results")
 
+// funcion que busca los resultados
 function search_result(){
 
+    // verifica si el largo del arreglo es cero para saber si se encontraron resulados o no
     if (show_product.length === 0){
 
         results.innerHTML = `
@@ -17,7 +19,7 @@ function search_result(){
         `        
 
     }else{
-
+        // se hace un bucle con for y se muestran todos los productos encontrados
         show_product.forEach(product => {
             results.innerHTML += `
     
@@ -64,6 +66,7 @@ function search_result(){
     
 }
 
+// funcion de comprar que recibe id como parametro
 function buy(newId){
 
     event.preventDefault()
