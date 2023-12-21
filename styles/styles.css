@@ -90,11 +90,13 @@
   padding-top: 3rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  width: 75%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-template-areas: "profile-side-l profile-side-r";
+  display: flex;
+  justify-content: center;
 }
 .grid-container .profile-side-l {
   grid-area: profile-side-l;
@@ -290,7 +292,8 @@ body {
 
 .sections-container {
   display: flex;
-  width: 75%;
+  width: 100%;
+  justify-content: center;
 }
 .sections-container .filters {
   padding-top: 10rem;
