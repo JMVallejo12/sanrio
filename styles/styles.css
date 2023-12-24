@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+.footer {
+  margin-top: 5rem;
+}
 .footer .color-space-container {
   background-color: rgb(165, 81, 208);
   height: 200px;
@@ -20,6 +23,40 @@
   font-size: 24px;
   text-align: center;
   font-weight: 600;
+}
+.footer .list-container {
+  display: flex;
+  justify-content: center;
+  padding: 1.3rem;
+}
+.footer .list-container .ul-world {
+  margin: 1rem;
+  list-style: none;
+}
+.footer .list-container .ul-world .li-world-tittle {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.footer .list-container .ul-world .li-world {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.footer .list-container .ul-social {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+.footer .list-container .ul-social .social {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 0.5rem;
 }
 
 .header {
@@ -90,11 +127,13 @@
   padding-top: 3rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  width: 75%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-template-areas: "profile-side-l profile-side-r";
+  display: flex;
+  justify-content: center;
 }
 .grid-container .profile-side-l {
   grid-area: profile-side-l;
@@ -290,7 +329,8 @@ body {
 
 .sections-container {
   display: flex;
-  width: 75%;
+  width: 100%;
+  justify-content: center;
 }
 .sections-container .filters {
   padding-top: 10rem;
@@ -395,6 +435,7 @@ body {
 
 .cart-items-container {
   padding-top: 8rem;
+  margin-bottom: 5rem;
 }
 .cart-items-container .h1-cart {
   color: rgb(165, 81, 208);

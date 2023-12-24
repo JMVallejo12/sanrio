@@ -45,7 +45,8 @@ body{
 
 .sections-container{
     display: flex;
-    width: 75%;
+    width: 100%;
+    justify-content: center;
 
     .filters{
         padding-top: 10rem;
