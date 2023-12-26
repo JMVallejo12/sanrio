@@ -7,7 +7,7 @@ const cart_container = document.getElementById("cart-items")
 
 // haciendo fetch a mi json local
 
-const products_url = "../products.json"
+// const products_url = "../products.json"
 
 // variable para el precio total
 let total = 0

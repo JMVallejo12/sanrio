@@ -1,0 +1,1 @@
+const products_url = "../products.json"

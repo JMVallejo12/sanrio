@@ -153,7 +153,7 @@ const favs_list = JSON.parse(localStorage.getItem('favs'))
     favcontainer.innerHTML = ``
 
 // encontrando el producto en la lista
-const products_url = "../products.json"
+// const products_url = "../products.json"
 
 fetch(products_url)
 .then(response => response.json())

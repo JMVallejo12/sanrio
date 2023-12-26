@@ -10,11 +10,11 @@ window.onload = function(){
 
 // trayendo la barra de busqueda con el id
 const search_bar = document.getElementById("busqueda")
-const products_url_main = "../products.json"
+// const products_url_main = "../products.json"
 let show_product
 
 // haciendo fetch al json local
-fetch(products_url_main)
+fetch(products_url)
 .then(response => response.json())
 .then(data=>{
     // haciendo un evento keydown para que cuando aprete el enter se ejecute
